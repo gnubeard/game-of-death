@@ -11,10 +11,20 @@
 Ybmmmd'
 ``` 
 
-A toy Game of Life implementation
+Game of Death is a toy [Game of Life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life) implementation implemented in Typed Racket. I call this a toy implementation because it's using a naive quadtree algorithm rather than the state-of-the-art Hashlife. However, building it taught me a bit about Typed Racket, and it was a blast to put together.
 
-I call this a toy implementation because it's using a naive quadtree algorithm rather than the state-of-the-art Hashlife.
+It has some basic support for [Run Length Encoding](https://www.conwaylife.com/wiki/Run_Length_Encoded), and will import and export via that format.
 
-However, building it taught me a bit about Typed Racket, and it was a blast to put together.
+GIFs can be exported, but beware, it's slow and might crash your system. GIFs will be sized according to the viewport, so if you're full screen, you're probably going to have a bad time.
+
+The rule governing birth and death of cells can be modified to your liking. Colors are customizable. Importing and exporting to file is available. There are several sizes of brush.
 
 These can be compiled and run with the [Racket programming language](https://racket-lang.org/).
+
+VERSIONS
+
+I guess this is 0.0.1.
+
+CONTRIBUT(ORS|ING)
+
+So far, just me (rob@robertlavery.com.) Pull requests are welcome.
