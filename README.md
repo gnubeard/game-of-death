@@ -11,7 +11,7 @@
 Ybmmmd'
 ``` 
 
-Game of Death is a toy [Game of Life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life) implementation implemented in Typed Racket. I call this a toy implementation because it's using a naive quadtree algorithm rather than the state-of-the-art Hashlife. However, building it taught me a bit about Typed Racket, and it was a blast to put together.
+Game of Death is a toy [Game of Life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life) implementation implemented in [Typed Racket](https://docs.racket-lang.org/ts-guide/). I call this a toy implementation because it's built on a naive [quadtree](https://en.wikipedia.org/wiki/Quadtree) data structure rather than the state-of-the-art [Hashlife](https://en.wikipedia.org/wiki/Hashlife). However, building it taught me a bit about Typed Racket, and it was a blast to put together.
 
 It has some basic support for [Run Length Encoding](https://www.conwaylife.com/wiki/Run_Length_Encoded), and will import and export via that format.
 
