@@ -18,7 +18,7 @@
 
 #lang typed/racket/gui
 (require typed/mrlib/gif)
-(require "qtreegold.rkt")
+(require "qtree.rkt")
   
 (: viewport-offset coordinate)
 (define viewport-offset (coordinate -50 -50))
