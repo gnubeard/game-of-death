@@ -23,7 +23,7 @@ These can be compiled and run with the [Racket programming language](https://rac
 
 VERSIONS
 
-I guess this is 0.0.1.
+1.0.0. First release!
 
 CONTRIBUT(ORS|ING)
 
