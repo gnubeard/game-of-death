@@ -13,7 +13,7 @@ Ybmmmd'
 
 ## ABOUT
 
-Game of Death is a toy [Game of Life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life) implementation implemented in [Typed Racket](https://docs.racket-lang.org/ts-guide/). I call this a toy implementation because it's built on a naive [quadtree](https://en.wikipedia.org/wiki/Quadtree) data structure rather than the state-of-the-art [Hashlife](https://en.wikipedia.org/wiki/Hashlife). However, building it taught me a bit about Typed Racket, and it was a blast to put together.
+Game of Death is a toy [Game of Life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life) implementation in [Typed Racket](https://docs.racket-lang.org/ts-guide/). I call this a toy implementation because it's built on a naive [quadtree](https://en.wikipedia.org/wiki/Quadtree) data structure rather than the state-of-the-art [Hashlife](https://en.wikipedia.org/wiki/Hashlife). However, building it taught me a bit about Typed Racket, and it was a blast to put together.
 
 ## FEATURES
 
