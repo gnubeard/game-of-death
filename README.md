@@ -28,3 +28,7 @@ I guess this is 0.0.1.
 CONTRIBUT(ORS|ING)
 
 So far, just me (rob@robertlavery.com). Pull requests are welcome.
+
+TODO
+
+I should clean up and better comment this code. If there's interest I might compile, sign and host binaries, for those who don't want to install Racket. (I really do recommend Racket, though.)
