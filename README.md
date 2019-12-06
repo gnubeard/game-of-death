@@ -23,6 +23,8 @@ GIFs can be exported, but beware, it's slow and might crash your system. GIFs wi
 
 The rule governing birth and death of cells can be modified to your liking. Colors are customizable. Importing and exporting to file is available. There are several sizes of brush.
 
+See the in-game help dialog for more. (Or just look at the code.)
+
 ## USAGE
 
 These can be compiled and run with the [Racket programming language](https://racket-lang.org/).
