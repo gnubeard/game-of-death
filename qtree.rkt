@@ -173,12 +173,12 @@
          [orphans (cape-orphans crime-scene-and-orphans)])
     (quadtree-fold crime-scene orphans)))
  
-; The best part is that after I implemented all this I realized I don't need deletion for Game of Life lol
+
 (: cps (-> Quadtree coordinate cape))
 (define (cps quadtree coords)
-  (cond [(null? quadtree) (cape null null)] ; Stop, he's already dead
-        [(equal? 'self (coordinate-compare (get-node-coords quadtree) coords)) ; Do the deed,
-         (cape null (rest (descendant-coordinates quadtree)))]                 ; but rescue the orphans.
+  (cond [(null? quadtree) (cape null null)]
+        [(equal? 'self (coordinate-compare (get-node-coords quadtree) coords))
+         (cape null (rest (descendant-coordinates quadtree)))]
         [else
          (let* ([quadrant (coordinate-compare (get-node-coords quadtree) coords)]
                 [r (lambda ([direction : (-> node Quadtree)]) (if (equal? quadrant direction)
@@ -208,23 +208,22 @@
 (define (quadtree-fold-optimized quadtree coord-list)
   (quadtree-fold quadtree (lexicographical-coordinate-sort coord-list)))
 
-
 (: quadtree-insert (-> Quadtree coordinate node))
 (define (quadtree-insert quadtree coords)
-  (cond [(null? quadtree) (node null null null null coords)]
-        [(procedure? (coordinate-compare (get-node-coords quadtree) coords))
-         (let* ([quadrant (coordinate-compare (get-node-coords quadtree) coords)]
-                [r (lambda ([direction : (-> node Quadtree)])
-                     (if (equal? quadrant direction)
-                         (quadtree-insert (get-node-child quadtree direction) coords)
-                         (get-node-child quadtree direction)))])
-           (node
-            (r node-NE)
-            (r node-NW)
-            (r node-SW)
-            (r node-SE)
-            (get-node-coords quadtree)))]
-        [else quadtree]))
+  (let ([quadrant (if (null? quadtree) null(coordinate-compare (get-node-coords quadtree) coords))])
+    (cond [(null? quadtree) (node null null null null coords)]
+          [(procedure? quadrant)
+           (let ([r (lambda ([direction : (-> node Quadtree)])
+                      (if (equal? quadrant direction)
+                          (quadtree-insert (get-node-child quadtree direction) coords)
+                          (get-node-child quadtree direction)))])
+             (node
+              (r node-NE)
+              (r node-NW)
+              (r node-SW)
+              (r node-SE)
+              (get-node-coords quadtree)))]
+          [else quadtree])))
 
 (: quadtree-translate (-> Quadtree coordinate Quadtree))
 (define (quadtree-translate quadtree coord)
@@ -252,3 +251,13 @@
                             "X: ~s Y: ~s\n"
                             (coordinate-x coord)
                             (coordinate-y coord))) coord-list))
+
+(: test-insert-performance (-> Integer Void))
+(define (test-insert-performance n)
+  (time
+   (void
+    (quadtree-fold null
+                   ((inst append-map coordinate Integer)
+                    (lambda ([y : Integer])
+                      (map (lambda ([x : Integer])
+                             (coordinate x y)) (range (* -1 n) n))) (range (* -1 n) n))))))
