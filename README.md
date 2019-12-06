@@ -11,7 +11,11 @@
 Ybmmmd'
 ``` 
 
+## ABOUT
+
 Game of Death is a toy [Game of Life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life) implementation implemented in [Typed Racket](https://docs.racket-lang.org/ts-guide/). I call this a toy implementation because it's built on a naive [quadtree](https://en.wikipedia.org/wiki/Quadtree) data structure rather than the state-of-the-art [Hashlife](https://en.wikipedia.org/wiki/Hashlife). However, building it taught me a bit about Typed Racket, and it was a blast to put together.
+
+## FEATURES
 
 It has some basic support for [Run Length Encoding](https://www.conwaylife.com/wiki/Run_Length_Encoded), and will import and export via that format.
 
@@ -19,16 +23,24 @@ GIFs can be exported, but beware, it's slow and might crash your system. GIFs wi
 
 The rule governing birth and death of cells can be modified to your liking. Colors are customizable. Importing and exporting to file is available. There are several sizes of brush.
 
+## USAGE
+
 These can be compiled and run with the [Racket programming language](https://racket-lang.org/).
 
-VERSIONS
+## SCREENSHOTS
+
+![image](https://user-images.githubusercontent.com/1585385/70302868-c20e4c80-17c3-11ea-8f95-ecee4247a54e.png)
+
+![image](https://user-images.githubusercontent.com/1585385/70303049-39dc7700-17c4-11ea-820a-cfcf230d2be5.png)
+
+## VERSIONS
 
 1.0.0. First release!
 
-CONTRIBUT(ORS|ING)
+## CONTRIBUT(ORS|ING)
 
 So far, just me (rob@robertlavery.com). Pull requests are welcome.
 
-TODO
+## TODO
 
 I should clean up and better comment this code. If there's interest I might compile, sign and host binaries, for those who don't want to install Racket. (I really do recommend Racket, though.)
